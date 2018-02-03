@@ -53,7 +53,9 @@ int main(int argc, char * argv[]) {
       do_usage(cout, visible_opts);
       return 0;
     }
-    read_image(infile);
+
+    auto img = read_image(infile);
+    to_maze(img);
   } catch(std::exception & e) {
     cerr << e.what() << endl;
     cerr << endl;
