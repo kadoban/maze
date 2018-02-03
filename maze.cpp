@@ -99,7 +99,7 @@ vector<point> solve_maze(const maze & m, size_t & suggested_radius) {
           out.push_back(make_pair(x, y));
         } while (make_pair(x, y) != s);
         out.push_back(make_pair(s.first, s.second));
-        suggested_radius = std::max(min_dist / 3, (size_t) 2);
+        suggested_radius = std::max(min_dist / 3, (size_t) 1);
         return out;
       }
     }
