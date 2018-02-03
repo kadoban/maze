@@ -1,17 +1,20 @@
 
-#include "main.h"
 #include <boost/program_options.hpp>
 #include <iostream>
 #include <string>
 #include <vector>
+#include "main.h"
+#include "image.h"
 
 namespace po = boost::program_options;
+
 using std::cin;
 using std::cout;
 using std::endl;
 using std::cerr;
 using std::vector;
 using std::string;
+
 
 void do_usage(std::ostream & out, const po::options_description & opts) {
   out << "Usage: " << endl;
@@ -50,6 +53,7 @@ int main(int argc, char * argv[]) {
       do_usage(cout, visible_opts);
       return 0;
     }
+    read_image(infile);
   } catch(std::exception & e) {
     cerr << e.what() << endl;
     cerr << endl;
