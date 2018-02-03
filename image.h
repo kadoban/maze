@@ -29,4 +29,4 @@ Image read_image(string filename);
  * any mazes with extra space around the edge don't just end up
  * with solutions that go around the edge of the maze uselessly.
  */
-maze to_maze(Image & img);
+maze to_maze(const Image & img);

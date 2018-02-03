@@ -21,7 +21,7 @@ Image read_image(string filename) {
   return img;
 }
 
-maze to_maze(Image & img) {
+maze to_maze(const Image & img) {
   auto width = img.size().width();
   auto height = img.size().height();
   maze res(width, vector<bool>(height, false));
