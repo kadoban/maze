@@ -65,3 +65,12 @@ maze to_maze(const Image & img) {
   }
   return res;
 }
+
+void draw_path(Image & img, const vector<point> & points, size_t width) {
+  img.strokeColor("red");
+  img.fillColor("red");
+  img.strokeWidth(width);
+  for (auto p : points) {
+    img.draw(DrawableCircle(p.first, p.second, p.first + width, p.second));
+  }
+}

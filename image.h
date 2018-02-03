@@ -30,3 +30,7 @@ Image read_image(string filename);
  * with solutions that go around the edge of the maze uselessly.
  */
 maze to_maze(const Image & img);
+
+/* Draw a path onto the image
+ */
+void draw_path(Image & img, const std::vector<point> & points, size_t width);

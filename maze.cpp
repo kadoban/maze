@@ -15,8 +15,6 @@ using std::pair;
 using std::deque;
 using std::make_pair;
 
-typedef pair<size_t, size_t> point;
-
 typedef pair<vector<vector<point>>, vector<vector<size_t>>> djik_res;
 
 vector<vector<size_t>> distance_from_wall(const maze &);
@@ -101,7 +99,7 @@ vector<point> solve_maze(const maze & m, size_t & suggested_radius) {
           out.push_back(make_pair(x, y));
         } while (make_pair(x, y) != s);
         out.push_back(make_pair(s.first, s.second));
-        suggested_radius = std::max(min_dist / 2, (size_t) 2);
+        suggested_radius = std::max(min_dist / 3, (size_t) 2);
         return out;
       }
     }
