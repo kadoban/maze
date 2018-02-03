@@ -18,7 +18,7 @@ using std::string;
 
 void do_usage(std::ostream & out, const po::options_description & opts) {
   out << "Usage: " << endl;
-  out << "maze [options] [input-file] [output-file]" << endl;
+  out << "maze [options] [input-file]" << endl;
   out << opts << endl;
 }
 
@@ -31,12 +31,10 @@ int main(int argc, char * argv[]) {
 
   po::options_description inout_opts("File specification options");
   inout_opts.add_options()
-    ("input-file", po::value(&infile), "input image file")
-    ("output-file", po::value(&outfile), "output image file");
+    ("input-file", po::value(&infile), "input image file");
 
   po::positional_options_description pos_opts_desc;
   pos_opts_desc.add("input-file", 1);
-  pos_opts_desc.add("output-file", 1);
 
   po::options_description all_opts, visible_opts;
 
