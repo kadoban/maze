@@ -1,7 +1,7 @@
 
 #include <vector>
 #include <algorithm>
-#include <exception>
+#include <stdexcept>
 #include <Magick++.h>
 #include "image.h"
 #include "maze.h"

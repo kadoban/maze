@@ -55,7 +55,11 @@ int main(int argc, char * argv[]) {
     }
 
     auto img = read_image(infile);
-    to_maze(img);
+    auto m = to_maze(img);
+    for (auto p : solve_maze(m)) {
+      img.pixelColor(p.first, p.second, Color("red"));
+    }
+    img.display();
   } catch(std::exception & e) {
     cerr << e.what() << endl;
     cerr << endl;
