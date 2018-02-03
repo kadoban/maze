@@ -70,7 +70,7 @@ vector<point> solve_maze(const maze & m, size_t & suggested_radius) {
     }
   }
   for (size_t y = 0; y < h; y += h-1) { // go along the top and the bottom
-    size_t min_so_far = max_dist;
+    size_t min_so_far = std::numeric_limits<size_t>::max();
     size_t best_x = w;
     for (size_t x = 0; x < w; ++x) {
       if (costs[x][y] < min_so_far) {
@@ -78,7 +78,7 @@ vector<point> solve_maze(const maze & m, size_t & suggested_radius) {
         best_x = x;
       }
     }
-    if (min_so_far < max_dist) {
+    if (min_so_far < std::numeric_limits<size_t>::max()) {
       starts.push_back(make_pair(best_x, y));
     }
   }
