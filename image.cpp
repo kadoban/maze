@@ -1,6 +1,7 @@
 
 #include <vector>
 #include <algorithm>
+#include <exception>
 #include <Magick++.h>
 #include "image.h"
 #include "maze.h"
@@ -14,6 +15,9 @@ Image read_image(string filename) {
   img.modifyImage(); // get ready to modify image
   img.threshold(QuantumRange * 0.5); // convert to black and white
   img.trim(); // trim off any space around the edges
+  if (img.size().width() == 0 || img.size().height() == 0) {
+    throw std::invalid_argument("Image is blank or nil sized");
+  }
   return img;
 }
 
