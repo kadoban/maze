@@ -101,9 +101,7 @@ vector<point> solve_maze(const maze & m, size_t & suggested_radius) {
           out.push_back(make_pair(x, y));
         } while (make_pair(x, y) != s);
         out.push_back(make_pair(s.first, s.second));
-        std::cout << s.first << " " << s.second << " -> " << e.first << " " << e.second
-                  << " = " << res.second[e.first][e.second] << std::endl;
-        std::cout << min_dist << std::endl;
+        suggested_radius = std::max(min_dist / 2, (size_t) 2);
         return out;
       }
     }
